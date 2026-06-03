@@ -8,8 +8,9 @@
     --muted-foreground: #6b7280;
     --border: #e5e7eb;
 }
-html{
-    scroll-behavior:smooth;
+
+html {
+    scroll-behavior: smooth;
 }
 
 * {
@@ -55,6 +56,44 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 15px 0;
+}
+.menu-btn{
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    background:#eef4f7;
+
+    border:none;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.menu-btn:hover{
+    background:#dcecf5;
+}
+
+.menu-btn {
+    display: none;
+
+    background: none;
+    border: none;
+
+    cursor: pointer;
+}
+
+.menu-btn svg {
+    width: 32px;
+    height: 32px;
+
+    color: var(--primary);
 }
 
 .logo {
@@ -876,6 +915,229 @@ footer {
 }
 
 /* RESPONSIVE */
+@media (max-width:992px) {
+
+    .hero-grid,
+    .contacto-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+    }
+
+    .hero-content {
+        order: 2;
+    }
+
+    .hero-image {
+        order: 1;
+    }
+
+    .hero h1 {
+        font-size: 4.5rem;
+    }
+
+    .hero h1 span {
+        font-size: 2.5rem;
+    }
+
+    .publico-grid,
+    .values-grid,
+    .testimonial-grid,
+    .dofa-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .container {
+        padding: 0 20px;
+    }
+
+    section {
+        padding: 80px 0;
+    }
+
+    .section-title h2 {
+        font-size: 2.5rem;
+    }
+
+    .section-title p {
+        font-size: 1rem;
+    }
+
+    .hero {
+        min-height: auto;
+        padding-top: 120px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .hero h1 {
+        font-size: 3.2rem;
+        text-align: center;
+    }
+
+    .hero h1 span {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-image img {
+        max-width: 280px;
+    }
+
+    .publico-grid,
+    .values-grid,
+    .testimonial-grid,
+    .dofa-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .publico-card,
+    .value-card,
+    .testimonial,
+    .dofa-card {
+        padding: 25px;
+    }
+
+    .testimonial p {
+        font-size: 1.4rem;
+    }
+
+    .contacto-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contacto-logo img {
+        width: 220px;
+    }
+
+    .footer-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .mision-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .mision-card {
+        padding: 25px;
+
+    }
+
+    .mision-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .mision-card h3 {
+        font-size: 1.8rem;
+    }
+
+    .card-icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .card-icon {
+        width: 50px;
+        height: 50px;
+        opacity: .08;
+    }
+
+    .btn-primary {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        background: white;
+
+        display: none;
+        flex-direction: column;
+
+        padding: 25px;
+
+        gap: 20px;
+
+        box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
+    }
+
+    nav.active {
+        display: flex;
+    }
+}
+
+
+
+@media (max-width:480px) {
+
+    .hero h1 {
+        font-size: 2.6rem;
+    }
+
+    .hero h1 span {
+        font-size: 1.6rem;
+    }
+
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .publico-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .dofa-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-brand {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
 
 @media(max-width:900px) {
 
@@ -902,11 +1164,6 @@ footer {
         font-size: 3.5rem;
     }
 
-
-}
-
-@media(max-width:768px) {
-
     .footer-top {
         flex-direction: column;
         gap: 25px;
@@ -918,4 +1175,6 @@ footer {
         justify-content: center;
         gap: 20px;
     }
+
+
 }

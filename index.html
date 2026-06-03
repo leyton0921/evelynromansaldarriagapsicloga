@@ -27,7 +27,7 @@
                 </div>
             </a>
 
-            <nav class="menu">
+            <nav class="menu" id="menu">
                 <a href="#hero">Sobre mí</a>
                 <a href="#valores">Valores</a>
                 <a href="#mision">Misión</a>
@@ -37,6 +37,9 @@
             </nav>
 
             <a href="#contacto" class="btn btn-primary">Agendar cita</a>
+            <button class="menu-btn" id="menuBtn">
+                <i data-lucide="menu"></i>
+            </button>
 
         </div>
     </header>
@@ -530,6 +533,27 @@
 
     <script>
         lucide.createIcons();
+    </script>
+    <script>
+
+        const menuBtn = document.getElementById("menuBtn");
+        const menu = document.getElementById("menu");
+
+        menuBtn.addEventListener("click", () => {
+
+            menu.classList.toggle("active");
+
+            const icon = menuBtn.querySelector("i");
+
+            if (menu.classList.contains("active")) {
+                icon.setAttribute("data-lucide", "x");
+            } else {
+                icon.setAttribute("data-lucide", "menu");
+            }
+
+
+        });
+
     </script>
 </body>
 
