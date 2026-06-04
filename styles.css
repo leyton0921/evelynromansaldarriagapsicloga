@@ -48,7 +48,7 @@ header {
     background: rgba(255, 255, 255, .95);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
-    z-index: 1000;
+    z-index: 10000;
 }
 
 .navbar {
@@ -57,27 +57,28 @@ header {
     align-items: center;
     padding: 15px 0;
 }
-.menu-btn{
-    width:48px;
-    height:48px;
 
-    border-radius:50%;
+.menu-btn {
+    width: 48px;
+    height: 48px;
 
-    background:#eef4f7;
+    border-radius: 50%;
 
-    border:none;
+    background: #eef4f7;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    border: none;
 
-    cursor:pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    transition:.3s;
+    cursor: pointer;
+
+    transition: .3s;
 }
 
-.menu-btn:hover{
-    background:#dcecf5;
+.menu-btn:hover {
+    background: #dcecf5;
 }
 
 .menu-btn {
@@ -155,8 +156,6 @@ header {
 .btn-outline:hover {
     background: #edf5fd;
 }
-
-/* HERO */
 
 .hero {
     min-height: 100vh;
@@ -330,7 +329,6 @@ header {
     font-weight: 500;
 }
 
-/* SECTIONS */
 
 section {
     padding: 100px 0;
@@ -353,7 +351,6 @@ section {
     color: var(--primary);
 }
 
-/* VALORES */
 
 .bg-light {
     background: var(--muted);
@@ -394,7 +391,7 @@ section {
     color: #6fa8dc;
 }
 
-/* MISION */
+
 
 .mision-grid {
     display: grid;
@@ -457,7 +454,7 @@ section {
     font-size: 1.3rem;
     line-height: 1.8;
     color: #2c4055;
-    max-width: 85%;
+    max-width: 100%;
 }
 
 .objetivo {
@@ -636,7 +633,6 @@ section {
     top: 12px;
 }
 
-/* TESTIMONIOS */
 .testimonial-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -693,7 +689,6 @@ section {
     color: var(--muted-foreground);
 }
 
-/* CONTACTO */
 
 #contacto {
     padding: 120px 0;
@@ -953,6 +948,40 @@ footer {
         text-align: center;
     }
 
+    #mision .mision-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100%;
+        gap: 25px;
+    }
+
+    #mision .mision-card {
+        width: 100%;
+        padding: 30px 22px;
+    }
+
+    #mision .objetivo {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    #mision .mision-card p {
+        max-width: 100%;
+    }
+
+    .objetivo {
+        grid-column: span 2;
+        justify-self: center;
+        width: 70%;
+    }
+
+    .icon-bg {
+        top: 20px;
+        right: 20px;
+        width: 75px;
+        height: 75px;
+    }
+
 }
 
 @media (max-width:768px) {
@@ -1040,21 +1069,41 @@ footer {
 
     .mision-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
+        gap: 30px;
     }
 
     .mision-card {
-        padding: 25px;
-
-    }
-
-    .mision-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
+        padding: 30px 22px;
+        border-radius: 14px;
+        min-height: auto;
     }
 
     .mision-card h3 {
-        font-size: 1.8rem;
+        font-size: 2rem;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .mision-card p {
+        max-width: 100%;
+        font-size: 1.05rem;
+        line-height: 1.8;
+    }
+
+    .icon-bg {
+        width: 80px;
+        height: 80px;
+
+        top: 20px;
+        right: 20px;
+
+        opacity: .10;
+    }
+
+    .objetivo {
+        width: 100%;
+        margin-top: 20px;
+        padding: 30px 20px;
     }
 
     .card-icon {
@@ -1077,12 +1126,17 @@ footer {
         display: block;
     }
 
-    nav {
-        position: absolute;
+    .navbar {
+        position: relative;
+    }
 
-        top: 100%;
+    .menu {
+        position: fixed;
+
+        top: 80px;
         left: 0;
-        right: 0;
+
+        width: 100%;
 
         background: white;
 
@@ -1093,10 +1147,12 @@ footer {
 
         gap: 20px;
 
-        box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
+        z-index: 9999;
+
+        box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
     }
 
-    nav.active {
+    menu.active {
         display: flex;
     }
 }

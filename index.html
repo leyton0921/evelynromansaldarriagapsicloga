@@ -38,7 +38,7 @@
 
             <a href="#contacto" class="btn btn-primary">Agendar cita</a>
             <button class="menu-btn" id="menuBtn">
-                <i data-lucide="menu"></i>
+                <i id="menuIcon" data-lucide="menu"></i>
             </button>
 
         </div>
@@ -470,8 +470,8 @@
 
                         <div class="redes-icons">
 
-                            <a href="#">
-                                <i data-lucide="linkedin"></i>
+                            <a href="https://www.linkedin.com/in/evelin-julieth-roman-saldarriaga-224006297?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+                                <i data-lucide="contact"></i>  
                             </a>
                         </div>
                     </div>
@@ -538,19 +538,24 @@
 
         const menuBtn = document.getElementById("menuBtn");
         const menu = document.getElementById("menu");
+        const menuIcon = document.getElementById("menuIcon");
 
         menuBtn.addEventListener("click", () => {
 
             menu.classList.toggle("active");
 
-            const icon = menuBtn.querySelector("i");
-
             if (menu.classList.contains("active")) {
-                icon.setAttribute("data-lucide", "x");
+
+                menuIcon.setAttribute("data-lucide", "x");
+
             } else {
-                icon.setAttribute("data-lucide", "menu");
+
+                menuIcon.setAttribute("data-lucide", "menu");
+
             }
 
+            menuIcon.innerHTML = "";
+            lucide.createIcons();
 
         });
 
