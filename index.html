@@ -37,8 +37,10 @@
             </nav>
 
             <a href="#contacto" class="btn btn-primary">Agendar cita</a>
-            <button class="menu-btn" id="menuBtn">
-                <i id="menuIcon" data-lucide="menu"></i>
+            <button id="menuBtn" class="menu-btn">
+                <span id="menuIcon">
+                    <i data-lucide="menu"></i>
+                </span>
             </button>
 
         </div>
@@ -470,8 +472,9 @@
 
                         <div class="redes-icons">
 
-                            <a href="https://www.linkedin.com/in/evelin-julieth-roman-saldarriaga-224006297?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
-                                <i data-lucide="contact"></i>  
+                            <a
+                                href="https://www.linkedin.com/in/evelin-julieth-roman-saldarriaga-224006297?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+                                <i data-lucide="contact"></i>
                             </a>
                         </div>
                     </div>
@@ -531,9 +534,7 @@
     </footer>
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <script>
-        lucide.createIcons();
-    </script>
+
     <script>
 
         const menuBtn = document.getElementById("menuBtn");
@@ -545,20 +546,18 @@
             menu.classList.toggle("active");
 
             if (menu.classList.contains("active")) {
-
-                menuIcon.setAttribute("data-lucide", "x");
-
+                menuIcon.innerHTML = '<i data-lucide="x"></i>';
             } else {
-
-                menuIcon.setAttribute("data-lucide", "menu");
-
+                menuIcon.innerHTML = '<i data-lucide="menu"></i>';
             }
 
-            menuIcon.innerHTML = "";
             lucide.createIcons();
 
         });
 
+    </script>
+    <script>
+        lucide.createIcons();
     </script>
 </body>
 
